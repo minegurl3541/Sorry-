@@ -1,0 +1,347 @@
+/* STYLE.CSS */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:black;
+overflow:hidden;
+height:100vh;
+color:white;
+}
+
+.scene{
+position:absolute;
+width:100%;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+opacity:0;
+pointer-events:none;
+transform:scale(1.1);
+transition:1s ease;
+overflow:hidden;
+}
+
+.scene.active{
+opacity:1;
+pointer-events:all;
+transform:scale(1);
+z-index:5;
+}
+
+.overlay{
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at top, rgba(255,255,255,0.08), transparent),
+linear-gradient(to bottom,#160022,#000);
+z-index:-2;
+}
+
+#particles{
+position:fixed;
+inset:0;
+pointer-events:none;
+overflow:hidden;
+z-index:999;
+}
+
+.particle{
+position:absolute;
+width:15px;
+height:15px;
+background:rgba(255,192,203,0.8);
+border-radius:50%;
+filter:blur(2px);
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+from{
+transform:translateY(-100px) translateX(0);
+opacity:1;
+}
+to{
+transform:translateY(110vh) translateX(100px);
+opacity:0;
+}
+}
+
+.mainTitle{
+font-size:5rem;
+margin-bottom:20px;
+text-align:center;
+text-shadow:0 0 20px rgba(255,0,100,0.5);
+animation:fadeUp 1.5s ease;
+}
+
+.title{
+font-size:3.5rem;
+margin-bottom:40px;
+text-align:center;
+}
+
+.mainText{
+max-width:700px;
+font-size:1.2rem;
+text-align:center;
+line-height:1.8;
+padding:0 20px;
+color:#ffdce5;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.nextBtn{
+padding:18px 40px;
+margin-top:40px;
+border:none;
+border-radius:100px;
+background:linear-gradient(45deg,#ff4d6d,#ff8fa3);
+color:white;
+font-size:1rem;
+cursor:pointer;
+box-shadow:0 0 30px rgba(255,0,100,0.4);
+transition:0.4s;
+}
+
+.nextBtn:hover{
+transform:scale(1.08);
+}
+
+.memoryGrid{
+width:90%;
+max-width:1100px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.memoryCard{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+border-radius:25px;
+padding:10px;
+overflow:hidden;
+transform:translateY(40px);
+animation:cardFloat 4s ease-in-out infinite;
+}
+
+.memoryCard img{
+width:100%;
+height:280px;
+object-fit:cover;
+border-radius:18px;
+}
+
+.memoryCard p{
+padding:15px;
+text-align:center;
+font-weight:600;
+}
+
+@keyframes cardFloat{
+50%{
+transform:translateY(-10px);
+}
+}
+
+.envelopeContainer{
+perspective:1000px;
+}
+
+.envelope{
+position:relative;
+width:320px;
+height:220px;
+cursor:pointer;
+}
+
+.envelopeFront{
+position:absolute;
+width:100%;
+height:100%;
+background:#ffb3c6;
+clip-path:polygon(0 0,100% 0,50% 60%);
+transform-origin:top;
+transition:1s;
+z-index:2;
+}
+
+.letter{
+position:absolute;
+width:90%;
+height:90%;
+background:white;
+top:5%;
+left:5%;
+border-radius:20px;
+padding:25px;
+color:#333;
+transform:translateY(100px);
+transition:1s;
+z-index:1;
+overflow:auto;
+}
+
+.letter h2{
+margin-bottom:15px;
+}
+
+.envelope.open .envelopeFront{
+transform:rotateX(180deg);
+}
+
+.envelope.open .letter{
+transform:translateY(0);
+}
+
+.hidden{
+display:none;
+}
+
+.floatingWords span{
+position:absolute;
+font-size:1.5rem;
+opacity:0.15;
+animation:floatWord 12s linear infinite;
+}
+
+.floatingWords span:nth-child(1){
+left:10%;
+animation-delay:0s;
+}
+
+.floatingWords span:nth-child(2){
+left:35%;
+animation-delay:2s;
+}
+
+.floatingWords span:nth-child(3){
+left:60%;
+animation-delay:4s;
+}
+
+.floatingWords span:nth-child(4){
+left:80%;
+animation-delay:6s;
+}
+
+@keyframes floatWord{
+from{
+transform:translateY(100vh);
+}
+to{
+transform:translateY(-120vh);
+}
+}
+
+.slider{
+position:relative;
+width:300px;
+height:420px;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:25px;
+opacity:0;
+transition:1s;
+}
+
+.activeSlide{
+opacity:1;
+transform:scale(1.03);
+}
+
+#typingText{
+margin-top:30px;
+font-size:1.3rem;
+color:#ffdce5;
+height:40px;
+}
+
+.heart{
+font-size:10rem;
+animation:heartBeat 1.5s infinite;
+z-index:2;
+}
+
+@keyframes heartBeat{
+50%{
+transform:scale(1.1);
+}
+}
+
+.glassEffect{
+position:absolute;
+inset:0;
+background:
+linear-gradient(45deg,transparent 48%,rgba(255,255,255,0.12) 50%,transparent 52%),
+linear-gradient(-45deg,transparent 48%,rgba(255,255,255,0.12) 50%,transparent 52%);
+background-size:50px 50px;
+opacity:0.5;
+}
+
+#musicToggle{
+position:fixed;
+top:20px;
+right:20px;
+width:60px;
+height:60px;
+border:none;
+border-radius:50%;
+background:#ff4d6d;
+color:white;
+font-size:1.5rem;
+z-index:9999;
+box-shadow:0 0 20px rgba(255,0,100,0.5);
+}
+
+@media(max-width:768px){
+
+.mainTitle{
+font-size:3rem;
+}
+
+.title{
+font-size:2.3rem;
+}
+
+.mainText{
+font-size:1rem;
+}
+
+.memoryCard img{
+height:220px;
+}
+
+.slider{
+width:260px;
+height:360px;
+}
+
+.heart{
+font-size:7rem;
+}
+
+}
