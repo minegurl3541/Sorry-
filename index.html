@@ -1,0 +1,216 @@
+<!-- INDEX.HTML -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I'm Sorry ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+<source src="https://files.catbox.moe/ol3k2r.mp3" type="audio/mp3">
+</audio>
+
+<button id="musicToggle">🎵</button>
+
+<div id="particles"></div>
+
+<!-- PAGE 1 -->
+
+<section class="scene active">
+
+<div class="overlay"></div>
+
+<div class="content">
+
+<h1 class="mainTitle">
+I'm Sorry ❤️
+</h1>
+
+<p class="mainText">
+Some mistakes hurt the people we love the most...
+But my love for you never changed.
+</p>
+
+<button class="nextBtn" onclick="nextScene()">
+Open My Heart
+</button>
+
+</div>
+
+</section>
+
+<!-- PAGE 2 -->
+
+<section class="scene">
+
+<div class="overlay"></div>
+
+<h1 class="title">Our Memories ✨</h1>
+
+<div class="memoryGrid">
+
+<div class="memoryCard">
+<img src="https://i.ibb.co/JWmMBNj7/IMG-9471.jpg">
+<p>Your smile heals me ❤️</p>
+</div>
+
+<div class="memoryCard">
+<img src="https://i.ibb.co/fdVvF6JB/IMG-9470.jpg">
+<p>I miss us...</p>
+</div>
+
+<div class="memoryCard">
+<img src="https://i.ibb.co/nqpZWf21/IMG-9467.jpg">
+<p>Please forgive me 🥺</p>
+</div>
+
+<div class="memoryCard">
+<img src="https://i.ibb.co/V0kx1YGB/IMG-9464.jpg">
+<p>You are my peace ✨</p>
+</div>
+
+</div>
+
+<button class="nextBtn" onclick="nextScene()">
+Next ➜
+</button>
+
+</section>
+
+<!-- PAGE 3 -->
+
+<section class="scene">
+
+<div class="overlay"></div>
+
+<div class="envelopeContainer">
+
+<div class="envelope" onclick="openEnvelope()">
+
+<div class="envelopeFront"></div>
+
+<div class="letter">
+
+<h2>To You 💌</h2>
+
+<p>
+I know I hurt you...
+and if I could go back,
+I would hold your heart more gently.
+Losing your smile hurts every day.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<button class="nextBtn hidden" id="letterBtn" onclick="nextScene()">
+Next ➜
+</button>
+
+</section>
+
+<!-- PAGE 4 -->
+
+<section class="scene">
+
+<div class="overlay"></div>
+
+<h1 class="title">Beautiful Moments 🌙</h1>
+
+<div class="floatingWords">
+<span>I miss you</span>
+<span>Please stay</span>
+<span>I still care ❤️</span>
+<span>You are special</span>
+</div>
+
+<div class="memoryGrid">
+
+<div class="memoryCard">
+<img src="https://i.ibb.co/RG6pJp47/IMG-9463.jpg">
+</div>
+
+<div class="memoryCard">
+<img src="https://i.ibb.co/W46Yy3Pp/IMG-9462.jpg">
+</div>
+
+<div class="memoryCard">
+<img src="https://i.ibb.co/V08CTpnV/IMG-9461.jpg">
+</div>
+
+<div class="memoryCard">
+<img src="https://i.ibb.co/gMz2kLLT/IMG-9459.jpg">
+</div>
+
+</div>
+
+<button class="nextBtn" onclick="nextScene()">
+Next ➜
+</button>
+
+</section>
+
+<!-- PAGE 5 -->
+
+<section class="scene">
+
+<div class="overlay"></div>
+
+<h1 class="title">Every Photo Holds Feelings 📸</h1>
+
+<div class="slider">
+
+<img class="slide activeSlide" src="https://i.ibb.co/vCKwJ4gk/IMG-9457.jpg">
+<img class="slide" src="https://i.ibb.co/CKnG9JvZ/IMG-9276.jpg">
+<img class="slide" src="https://i.ibb.co/cSRHF4ND/IMG-9274.jpg">
+<img class="slide" src="https://i.ibb.co/LzyQwrQG/IMG-9270.jpg">
+
+</div>
+
+<p id="typingText"></p>
+
+<button class="nextBtn" onclick="nextScene()">
+Final Page ➜
+</button>
+
+</section>
+
+<!-- PAGE 6 -->
+
+<section class="scene">
+
+<div class="glassEffect"></div>
+
+<div class="overlay"></div>
+
+<div class="heart">
+❤️‍🩹
+</div>
+
+<h1 class="title">I'm Truly Sorry...</h1>
+
+<p class="mainText">
+Even broken hearts still carry love.
+Thank you for every beautiful memory.
+I will always care for you ❤️
+</p>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
